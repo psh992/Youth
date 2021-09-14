@@ -18,6 +18,10 @@ jobs:
       YOUTH_READ5: ${{ secrets.YOUTH_READ5 }}
       YOUTH_READ6: ${{ secrets.YOUTH_READ6 }}
       YOUTH_READ7: ${{ secrets.YOUTH_READ7 }}
+      YOUTH_READ8: ${{ secrets.YOUTH_READ8 }}
+      YOUTH_READ9: ${{ secrets.YOUTH_READ9 }}
+      YOUTH_READ10: ${{ secrets.YOUTH_READ10 }}
+  
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -84,5 +88,29 @@ jobs:
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ7 }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME7 }}
+          
+      - name: '运行 【中青看点阅读八】'
+        if: env.YOUTH_READ8
+        run: |
+          node Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ8 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME8 }}
+          
+      - name: '运行 【中青看点阅读九】'
+        if: env.YOUTH_READ9
+        run: |
+          node Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ9 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME9 }}
+          
+      - name: '运行 【中青看点阅读十】'
+        if: env.YOUTH_READ10
+        run: |
+          node Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ10 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME10 }}
 
 
