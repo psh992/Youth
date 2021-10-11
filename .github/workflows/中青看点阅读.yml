@@ -3,7 +3,7 @@ name: 中青看点阅读
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 10,13,16,19,22 * * *'
+     - cron: '0 13,16,19,22 * * *'
   watch:
     types: started
 jobs:
